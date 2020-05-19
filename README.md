@@ -45,7 +45,7 @@ This is a basic vocabulary to understand some differences between some of the co
 
 This is the list of mountables that offers this package:
 
-#### Controller
+### Controller
 
 **Description:**
 
@@ -75,7 +75,7 @@ mount.Controller({
 });
 ```
 
-#### ControllerFactory
+### ControllerFactory
 
 **Description:**
 
@@ -100,7 +100,7 @@ mount.ControllerFactory({
 });
 ```
 
-#### Middleware
+### Middleware
 
 **Description:**
 
@@ -123,7 +123,7 @@ mount.Middleware({
 });
 ```
 
-#### MiddlewareFactory
+### MiddlewareFactory
 
 **Description:**
 
@@ -146,7 +146,7 @@ mount.MiddlewareFactory({
 });
 ```
 
-#### Template
+### Template
 
 **Description:**
 
@@ -199,7 +199,7 @@ mount.Template({
 });
 ```
 
-#### Page
+### Page
 
 **Description:**
 
