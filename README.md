@@ -173,6 +173,7 @@ mount.MiddlewareFactory({
 - `request`: the express `request` object.
 - `response`: the express `response` object.
 - `next`: the express `next` function.
+- `all`: all these parameters, for you to find things easily, or continue passing parameters templates down.
 
 **Considerations:**
 
