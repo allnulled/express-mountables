@@ -243,7 +243,7 @@ The templates for a `Page` takes the same parameters of a standard [`Template`](
 
 - The keys of this object **must match** the keys of `dependencies` or `bodyDependencies` objects passed to the `Page` mountable.
 - The values **must be** a simple `true` or `false`.
-- The values can also be direct `String`s: in that case, the code provided in that `String` is directly injected.
+- The values can also be direct `String`s: in that case, the code provided in that `String` is directly injected. In this case, the keys **do not need to match** the  keys at `dependencies` or `bodyDependencies`.
 - This object should be passed across all the templates that are being rendered by a specific `Page`, for them to put in `true` their dependencies.
 - This way, on the top of each template, we can set to this object the resources that we need for that specific template to render adecuatedly.
 - This way, we can define the dependencies (`css`, `js`, `meta` tags, etc.) per each template, and reuse that templates without caring about its dependencies.
