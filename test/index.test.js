@@ -17,6 +17,7 @@ describe("Express mountables", function() {
 	};
 
 	before(function() {
+		
 		mount.Controller({
 			app,
 			route: "/controller",
@@ -25,6 +26,7 @@ describe("Express mountables", function() {
 				return response.send("ok.1");
 			}
 		});
+		
 		mount.ControllerFactory({
 			app,
 			route: "/controller-factory",
@@ -35,6 +37,7 @@ describe("Express mountables", function() {
 				}
 			}
 		}, { index: 100 });
+		
 		mount.Middleware({
 			app,
 			route: "/middleware",
@@ -43,6 +46,7 @@ describe("Express mountables", function() {
 				return response.send("ok.2");
 			}
 		});
+		
 		mount.MiddlewareFactory({
 			app,
 			route: "/middleware-factory",
@@ -53,6 +57,7 @@ describe("Express mountables", function() {
 				}
 			}
 		}, { index: 200 });
+		
 		mount.Template({
 			app,
 			method: ["GET", "POST"],
@@ -60,6 +65,7 @@ describe("Express mountables", function() {
 			middleware: [increaseCounter],
 			template: "ok.<%-others.index%>"
 		}, { index: 300 });
+		
 		mount.Page({
 			app,
 			method: ["GET", "POST"],
@@ -70,7 +76,9 @@ describe("Express mountables", function() {
 			middleware: [increaseCounter],
 			template: "<% Object.assign(pageDependencies, { helloTitle: true }) %>ok.<%-others.index%>"
 		}, { index: 400 });
+
 		server = app.listen(8008);
+		
 	});
 
 	after(function() {
