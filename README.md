@@ -10,8 +10,6 @@ Complements for express framework: controller, middleware, template and page.
 
 To have a set of utilities that can easily complement `express` framework.
 
-
-
 ## Usage
 
 The usage is always the same:
