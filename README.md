@@ -252,8 +252,8 @@ The templates for a `Page` takes the same parameters of a standard [`Template`](
 
 ## License
 
-This project is licensed under [WTFPL or What The Fuck Public License](), which means, in short terms, *do what you want*.
+This project is licensed under [WTFPL or What The Fuck Public License](https://en.wikipedia.org/wiki/WTFPL), which means, in short terms, *do what you want*.
 
 ## Issues
 
-Please, address issues [here]().
+Please, address issues [here](https://github.com/allnulled/express-mountables/issues).
