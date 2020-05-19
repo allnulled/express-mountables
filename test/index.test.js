@@ -64,8 +64,11 @@ describe("Express mountables", function() {
 			app,
 			method: ["GET", "POST"],
 			route: "/page",
+			dependencies: {
+				helloTitle: "<title>Hello</title>"
+			},
 			middleware: [increaseCounter],
-			template: "ok.<%-others.index%>"
+			template: "<% Object.assign(pageDependencies, { helloTitle: true }) %>ok.<%-others.index%>"
 		}, { index: 400 });
 		server = app.listen(8008);
 	});
@@ -113,6 +116,7 @@ describe("Express mountables", function() {
 
 	it("mount.Page", function(done) {
 		axios.post("http://127.0.0.1:8008/page").then(function({ data }) {
+			expect(data.indexOf("<title>Hello</title>")).to.not.equal(-1);
 			expect(data.indexOf("ok.400")).to.not.equal(-1);
 			done();
 		}).catch(done);
