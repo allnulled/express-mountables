@@ -252,6 +252,18 @@ The templates for a `Page` takes the same parameters of a standard [`Template`](
 
 The `Handlers API` lets you reuse the code of the mountables without mounting: you pass the parameters, and you get the controller: the function that can handle (`request`, `response`, `next`) parameters.
 
+To access the handlers, instead of accessing to:
+
+```js
+require("express-mountables").mount.Controller(...)
+```
+
+You access to:
+
+```js
+require("express-mountables").handler.Controller(...)
+```
+
 Every `mountable` has its `handler` defined separatedly.
 
 You only need to access to it, and instantiate it the same way you would do with the `mountable`.
