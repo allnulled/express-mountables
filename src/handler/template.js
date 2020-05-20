@@ -12,7 +12,6 @@ module.exports = function templateHandler(parameters, others = {}) {
 	if(!(template || file)) {
 		throw new Error("Required parameter <template> or <file>.");
 	}
-	const methods = [].concat(method);
 	const controller = function(request, response, next) {
 		const templateParameters = createParameters({
 			parameters,

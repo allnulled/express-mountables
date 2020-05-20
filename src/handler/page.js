@@ -5,10 +5,6 @@ const wrapPage = require(__dirname + "/../wrap-page.js")
 
 module.exports = function pageHandler(parameters, others = {}) {
 	const {
-		app = false,
-		method = "get",
-		route = "*",
-		middleware = [],
 		file = false,
 		template = false,
 		options = {},
@@ -19,7 +15,6 @@ module.exports = function pageHandler(parameters, others = {}) {
 	if(!(template || file)) {
 		throw new Error("Required parameter <template> or <file>.");
 	}
-	const methods = [].concat(method);
 	const controller = function(request, response, next) {
 		const templateParameters = createParameters({
 			parameters,
