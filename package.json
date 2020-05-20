@@ -1,6 +1,6 @@
 {
   "name": "express-mountables",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Complements for express framework: controller, middleware, template and page.",
   "main": "index.js",
   "directories": {
