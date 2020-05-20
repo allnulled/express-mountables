@@ -4,18 +4,11 @@ const errorHandler = require(__dirname + "/../error-handler.js");
 
 module.exports = function templateHandler(parameters, others = {}) {
 	const {
-		app = false,
-		method = "get",
-		route = "*",
-		middleware = [],
 		file = false,
 		template = false,
 		options = {},
 		onRenderError = errorHandler,
 	} = parameters;
-	if(!app) {
-		throw new Error("Required parameter <app>");
-	}
 	if(!(template || file)) {
 		throw new Error("Required parameter <template> or <file>.");
 	}

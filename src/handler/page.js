@@ -16,9 +16,6 @@ module.exports = function pageHandler(parameters, others = {}) {
 		dependencies = {},
 		bodyDependencies = {},
 	} = parameters;
-	if(!app) {
-		throw new Error("Required parameter <app>");
-	}
 	if(!(template || file)) {
 		throw new Error("Required parameter <template> or <file>.");
 	}
