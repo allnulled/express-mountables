@@ -248,6 +248,31 @@ The templates for a `Page` takes the same parameters of a standard [`Template`](
 - This way, on the top of each template, we can set to this object the resources that we need for that specific template to render adecuatedly.
 - This way, we can define the dependencies (`css`, `js`, `meta` tags, etc.) per each template, and reuse that templates without caring about its dependencies.
 
+## Handlers API
+
+The `Handlers API` lets you reuse the code of the mountables without mounting: you pass the parameters, and you get the controller: the function that can handle (`request`, `response`, `next`) parameters.
+
+Every `mountable` has its `handler` defined separatedly.
+
+You only need to access to it, and instantiate it the same way you would do with the `mountable`.
+
+The only difference between the `mountables` and the `handlers` are the parameters that are not required by the handler specifically.
+
+For example, the handlers do not require:
+
+  - `app`: a `handler` does not need to know about the `app` or `router` used to mount itself.
+  - `method`: a `handler` does not need to know which is the method of the request.
+  - `route`: a `handler` does not need to know the route in which, as `mountable`, it used be restricted to.
+  - `middleware`: a `handler` does not need to know the middlewares that, as `mountable`, it should apply before the handler to be executed.
+
+## Utilities API
+
+The following methods are also available from the package to reuse them at convenience:
+
+  - `mountables.createParameters(params = {})`. Method to create the parameters used by the templates.
+  - `mountables.wrapPage(contents = "", dependencies = {}, headDeps = {}, bodyDeps = {})`. Method to wrap the contents of an HTML5 document.
+  - `mountables.errorHandler(error, request, response, next)`. Method to handle errors in production or non-production environments.
+
 ## License
 
 This project is licensed under [WTFPL or What The Fuck Public License](https://en.wikipedia.org/wiki/WTFPL), which means, in short terms, *do what you want*.
